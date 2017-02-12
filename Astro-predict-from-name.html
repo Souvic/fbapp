@@ -1,0 +1,41 @@
+<html>
+<head>Hi, I am the Numerology Expert.
+Please provide me with your name. I will tell you your nature, your good days and bad days. What professions will be ideal for you etc.
+</head>
+<body>
+
+<form id="frm1" action="form_action.asp">
+  First name: <input type="text" name="fname" value="Donald"><br>
+  Last name: <input type="text" name="lname" value="Duck"><br><br>
+  <input type="submit" value="Submit">
+</form> 
+
+<p>Click "Try it" to display the value of each element in the form.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+    var x = document.getElementById("frm1");
+	var val=0
+    var i,j;
+    for (i = 0; i < 2 ;i++) {
+        str=x.elements[i].value
+		str=str.toLowerCase()
+		console.log(str)
+		for(j=0;j<str.length;j++)
+		{
+		val+=(str.charCodeAt(j)-96);
+		}
+    }
+	if(val%9==0){document.getElementById("demo").innerHTML = 9;}else{document.getElementById("demo").innerHTML = val%9;}
+    
+}
+</script>
+</body>
+
+<button id="b">click me</button>
+
+</html>
